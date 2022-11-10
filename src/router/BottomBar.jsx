@@ -1,9 +1,18 @@
-import { View, Text } from 'react-native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-const BottomBar = () => (
-  <View>
-    <Text>Home</Text>
-  </View>
-)
+/* ------------------------------- Components ------------------------------- */
+import Index from '../pages/homepage/Index'
+import Profile from '../pages/profile/Index'
+
+const Tab = createBottomTabNavigator()
+
+const BottomBar = () => {
+  return (
+    <Tab.Navigator initialRouteName="Home">
+      <Tab.Screen name="List Pokemon" component={Index} />
+      <Tab.Screen name="Profile" component={Profile} />
+    </Tab.Navigator>
+  )
+}
 
 export default BottomBar

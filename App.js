@@ -1,14 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
-import TopBar from './src/router/TopBar';
 import BottomBar from './src/router/BottomBar';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
-    <>
-      <TopBar />
+    <NavigationContainer>
       <BottomBar />
-    </>
+    </NavigationContainer>
   );
 }
 

@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 
-const Home = () => {
+const Profile = () => {
   return (
     <View>
       <Text>Home x</Text>
@@ -8,4 +8,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Profile
