@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { getAllPokemon, getPokemon } from '../../services/pokemon'
 import { StyleSheet } from 'react-native'
 import Listing from '../../components/organisms/Listing'
+import SeeMore from '../../components/atoms/SeeMore'
 
 const Stack = createNativeStackNavigator()
 
@@ -16,11 +17,25 @@ const Homepage = () => {
   }, [])
 
   const getPokemonList = async () => {
-    const response = await getAllPokemon()
+    const response = await getAllPokemon(20)
     setPokemonList(response.results)
   }
 
-  return <View>{pokemonList ? <Listing data={pokemonList} /> : null}</View>
+  const getMorePokemon = async () => {
+    const response = await getAllPokemon(20, pokemonList.length)
+    setPokemonList([...pokemonList, ...response.results])
+  }
+
+  return (
+    <View>
+      {pokemonList ? (
+        <>
+          <SeeMore onClick={getMorePokemon} />
+          <Listing data={pokemonList} />
+        </>
+      ) : null}
+    </View>
+  )
 }
 
 export default Homepage
