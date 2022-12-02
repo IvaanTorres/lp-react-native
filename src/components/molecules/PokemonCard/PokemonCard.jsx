@@ -4,7 +4,6 @@ import { Text, View, Image, TouchableOpacity } from 'react-native'
 import { Dimensions } from 'react-native'
 import routes from '../../../constants/routes'
 import { getPokemon } from '../../../services/pokemon'
-import getPokemonBackground from '../../../utils/getPokemonBackground'
 import uppercaseString from '../../../utils/uppercaseString'
 import Styles from './styles'
 

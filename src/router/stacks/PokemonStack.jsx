@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import routes from '../constants/routes.js'
-import PokemonDetails from '../pages/details/Index.jsx'
-import PokemonList from '../pages/homepage/Index.jsx'
+import routes from '../../constants/routes.js'
+import PokemonDetails from '../../pages/pokemonDetails/Index'
+import PokemonList from '../../pages/homepage/Index'
 
 const Stack = createNativeStackNavigator()
 

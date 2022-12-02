@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import getPokemonBackground from '../../../utils/getPokemonBackground'
+import getPokemonBackgroundColor from '../../../utils/getPokemonBackgroundColor'
 
 export default styles = (props) => StyleSheet.create({
   touchableCardWrapper: {
@@ -15,7 +15,7 @@ export default styles = (props) => StyleSheet.create({
         ? props?.dimensions.width / 2 - 22
         : props?.dimensions.width / 3 - 22,
     height: props?.cardWidth,
-    backgroundColor: getPokemonBackground(props?.pokemon?.types[0].type.name),
+    backgroundColor: getPokemonBackgroundColor(props?.pokemon?.types[0].type.name),
     borderRadius: 20,
   },
   cardLayout: {

@@ -1,6 +1,6 @@
 import { backgroundColors } from '../constants/colors';
 
-export default getPokemonBackground = (type) => {
+export default getPokemonBackgroundColor = (type) => {
   switch (type) {
     case 'grass':
       return backgroundColors.grass;

@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 /* ------------------------------- Components ------------------------------- */
 import Profile from '../pages/profile/Index'
-import PokemonStack from './PokemonStack'
+import PokemonStack from './stacks/PokemonStack'
 import Favorites from '../pages/favorites'
 import routes from '../constants/routes'
 
