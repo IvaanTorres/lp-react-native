@@ -5,6 +5,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 /* ------------------------------- Components ------------------------------- */
 import Profile from '../pages/profile/Index'
 import PokemonStack from './PokemonStack'
+import Favorites from '../pages/favorites'
 
 const Tab = createBottomTabNavigator()
 
@@ -19,8 +20,25 @@ const BottomBar = () => {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-list-circle" size={size} color={color} />
           ),
-          tabBarActiveTintColor: 'red',
+          tabBarActiveTintColor: 'black',
+          tabBarShowLabel: false,
           headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name="Favorites"
+        component={Favorites}
+        options={{
+          tabBarLabel: 'Favorites',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="star-circle"
+              size={size}
+              color={color}
+            />
+          ),
+          tabBarActiveTintColor: 'black',
+          tabBarShowLabel: false,
         }}
       />
       <Tab.Screen
@@ -28,7 +46,6 @@ const BottomBar = () => {
         component={Profile}
         options={{
           tabBarLabel: 'Profile',
-          tabBarActiveTintColor: 'red',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="face-man-profile"
@@ -36,6 +53,8 @@ const BottomBar = () => {
               color={color}
             />
           ),
+          tabBarActiveTintColor: 'black',
+          tabBarShowLabel: false,
         }}
       />
     </Tab.Navigator>
