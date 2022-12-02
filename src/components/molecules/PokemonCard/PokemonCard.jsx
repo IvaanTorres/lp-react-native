@@ -57,8 +57,7 @@ const PokemonCard = ({ data }) => {
         {pokemon
           ? pokemon.types.map((item) => (
               <Text key={item.type.name} style={Styles().pokemonType}>
-                {item.type.name.slice(0, 1).toUpperCase() +
-                  item.type.name.slice(1)}
+                {uppercaseString(item.type.name)}
               </Text>
             ))
           : null}
