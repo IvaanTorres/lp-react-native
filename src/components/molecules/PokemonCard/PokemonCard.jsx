@@ -1,13 +1,15 @@
 import { useNavigation } from '@react-navigation/native'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Text, View, Image, TouchableOpacity } from 'react-native'
 import { Dimensions } from 'react-native'
 import routes from '../../../constants/routes'
+import { MainContext } from '../../../contexts/main'
 import { getPokemon } from '../../../services/pokemon'
 import uppercaseString from '../../../utils/uppercaseString'
 import Styles from './styles'
 
 const PokemonCard = ({ data }) => {
+  const { screen } = useContext(MainContext)
   const [pokemon, setPokemon] = useState(null)
   const [cardWidth, setCardWidth] = useState(null)
   const navigation = useNavigation()
@@ -15,8 +17,6 @@ const PokemonCard = ({ data }) => {
   const pokemonId = data.url.split('/')[6]
   const formattedPokemonName = uppercaseString(data.name)
   const pokemonImageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`
-
-  const dimensions = Dimensions.get('screen')
 
   // POUR REMI : Check promesse
   useEffect(() => {
@@ -33,8 +33,8 @@ const PokemonCard = ({ data }) => {
       style={
         Styles({
           cardWidth,
-          dimensions,
-          pokemon: pokemon,
+          screenWidth: screen.width,
+          pokemon,
         }).touchableCardWrapper
       }
       onLayout={(event) => {

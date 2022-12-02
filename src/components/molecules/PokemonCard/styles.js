@@ -11,9 +11,9 @@ export default styles = (props) => StyleSheet.create({
     elevation: 5,
     flexDirection: 'row',
     width:
-      props?.dimensions.width < 768
-        ? props?.dimensions.width / 2 - 22
-        : props?.dimensions.width / 3 - 22,
+      props?.screenWidth < 768
+        ? props?.screenWidth / 2 - 22
+        : props?.screenWidth / 3 - 22,
     height: props?.cardWidth,
     backgroundColor: getPokemonBackgroundColor(props?.pokemon?.types[0].type.name),
     borderRadius: 20,
