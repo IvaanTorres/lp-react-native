@@ -30,6 +30,7 @@ const PokemonCard = ({ data }) => {
     <TouchableOpacity
       style={{
         display: 'flex',
+        padding: 15,
         flexDirection: 'row',
         width:
           dimensions.width < 768
@@ -49,27 +50,68 @@ const PokemonCard = ({ data }) => {
     >
       <View
         style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          flexDirection: 'row',
-          alignItems: 'center',
+          position: 'relative',
+          flexDirection: 'column',
           width: '100%',
           marginBottom: 10,
-          paddingLeft: 10,
-          paddingRight: 10,
-          borderRadius: 10,
         }}
       >
-        <Text>{formattedName}</Text>
+        <Text
+          style={{
+            color: 'white',
+            fontSize: 16,
+            fontWeight: 'bold',
+            textAlign: 'left',
+          }}
+        >
+          #{pokemon?.id}
+        </Text>
+        <Text
+          style={{
+            color: 'white',
+            fontSize: 25,
+            fontWeight: 'bold',
+            marginBottom: 5,
+            textAlign: 'left',
+          }}
+        >
+          {formattedName}
+        </Text>
         <Image
-          style={{ width: 75, height: 75 }}
+          style={{
+            width: '75%',
+            height: '75%',
+            position: 'absolute',
+            bottom: -20,
+            right: -15,
+          }}
           source={{
             uri: imageUrl,
           }}
         />
-        {pokemon ? (
-          <Text>{pokemon.types.map((item) => item.type.name)}</Text>
-        ) : null}
+        {pokemon
+          ? pokemon.types.map((item) => (
+              <Text
+                key={item.type.name}
+                style={{
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  fontSize: 14,
+                  fontWeight: 'bold',
+                  borderRadius: 15,
+                  //display: 'flex',
+                  paddingVertical: 5,
+                  paddingHorizontal: 10,
+                  marginTop: 5,
+                  backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                  width: '50%',
+                  textAlign: 'center',
+                }}
+              >
+                {item.type.name.slice(0, 1).toUpperCase() +
+                  item.type.name.slice(1)}
+              </Text>
+            ))
+          : null}
       </View>
     </TouchableOpacity>
   )

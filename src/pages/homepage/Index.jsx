@@ -38,8 +38,8 @@ const Homepage = () => {
     <View>
       {pokemonList ? (
         <>
-          <SeeMore onClick={getMorePokemon} />
-          <Listing data={pokemonList} />
+          {/* <SeeMore onClick={getMorePokemon} /> */}
+          <Listing data={pokemonList} getMorePokemon={getMorePokemon} />
         </>
       ) : null}
     </View>

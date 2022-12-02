@@ -10,7 +10,7 @@ import {
 } from 'react-native'
 import PokemonCard from '../molecules/PokemonCard'
 
-const Listing = ({ data }) => {
+const Listing = ({ data, getMorePokemon }) => {
   const [lastElement, setLastElement] = useState(null)
   const [windowWidth, setWindowWidth] = useState(Dimensions.get('screen').width)
 
@@ -20,6 +20,7 @@ const Listing = ({ data }) => {
         style={styles.list}
         contentContainerStyle={{
           margin: 15,
+          marginBottom: 20,
         }}
         numColumns={windowWidth < 768 ? 2 : 3}
         columnWrapperStyle={{
@@ -29,6 +30,8 @@ const Listing = ({ data }) => {
         data={data}
         renderItem={({ item }) => <PokemonCard data={item} />}
         keyExtractor={(item) => item.name}
+        ListFooterComponent={() => <View style={{ height: 30 }} />}
+        onEndReached={getMorePokemon}
       />
     </View>
   )
@@ -40,6 +43,7 @@ const styles = StyleSheet.create({
   },
   list: {
     display: 'flex',
+
     /* marginLeft: -15,
     marginRight: 15, */
   },
