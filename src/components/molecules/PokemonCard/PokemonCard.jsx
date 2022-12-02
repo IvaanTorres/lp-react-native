@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native'
 import { useEffect, useState } from 'react'
 import { Text, View, Image, TouchableOpacity } from 'react-native'
 import { Dimensions } from 'react-native'
+import routes from '../../../constants/routes'
 import { getPokemon } from '../../../services/pokemon'
 import getPokemonBackground from '../../../utils/getPokemonBackground'
 import uppercaseString from '../../../utils/uppercaseString'
@@ -42,7 +43,7 @@ const PokemonCard = ({ data }) => {
         setCardWidth(width)
       }}
       onPress={() => {
-        navigation.navigate('PokemonDetails', { url: data.url })
+        navigation.navigate(routes.POKEMON_DETAILS, { url: data.url })
       }}
     >
       <View style={Styles().cardLayout}>

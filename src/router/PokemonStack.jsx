@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import routes from '../constants/routes.js'
 import PokemonDetails from '../pages/details/Index.jsx'
 import PokemonList from '../pages/homepage/Index.jsx'
 
@@ -8,7 +9,7 @@ const PokemonStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="PokemonList"
+        name={routes.POKEMON_LISTING}
         component={PokemonList}
         options={{
           title: 'Pokedex',
@@ -16,7 +17,7 @@ const PokemonStack = () => {
         }}
       />
       <Stack.Screen
-        name="PokemonDetails"
+        name={routes.POKEMON_DETAILS}
         component={PokemonDetails}
         options={{
           title: 'Pokemon Details',
