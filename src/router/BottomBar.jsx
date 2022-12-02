@@ -3,23 +3,24 @@ import { Ionicons } from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 /* ------------------------------- Components ------------------------------- */
-import Index from '../pages/homepage/Index'
 import Profile from '../pages/profile/Index'
+import PokemonStack from './PokemonStack'
 
 const Tab = createBottomTabNavigator()
 
 const BottomBar = () => {
   return (
-    <Tab.Navigator initialRouteName="Home">
+    <Tab.Navigator initialRouteName="Pokemon">
       <Tab.Screen
-        name="List Pokemon"
-        component={Index}
+        name="Pokemon"
+        component={PokemonStack}
         options={{
-          tabBarLabel: 'List Pokemon',
+          tabBarLabel: 'Pokemon',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-list-circle" size={size} color={color} />
           ),
           tabBarActiveTintColor: 'red',
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -27,6 +28,7 @@ const BottomBar = () => {
         component={Profile}
         options={{
           tabBarLabel: 'Profile',
+          tabBarActiveTintColor: 'red',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="face-man-profile"

@@ -7,8 +7,6 @@ import { StyleSheet } from 'react-native'
 import Listing from '../../components/organisms/Listing'
 import SeeMore from '../../components/atoms/SeeMore'
 
-const Stack = createNativeStackNavigator()
-
 const Homepage = () => {
   const [pokemonList, setPokemonList] = useState([])
 
@@ -17,13 +15,23 @@ const Homepage = () => {
   }, [])
 
   const getPokemonList = async () => {
-    const response = await getAllPokemon(20)
-    setPokemonList(response.results)
+    try {
+      const response = await getAllPokemon(20)
+      setPokemonList(response.results)
+    } catch (error) {
+      console.log(error)
+      throw error
+    }
   }
 
   const getMorePokemon = async () => {
-    const response = await getAllPokemon(20, pokemonList.length)
-    setPokemonList([...pokemonList, ...response.results])
+    try {
+      const response = await getAllPokemon(20, pokemonList.length)
+      setPokemonList([...pokemonList, ...response.results])
+    } catch (error) {
+      console.log('error')
+      throw error
+    }
   }
 
   return (
