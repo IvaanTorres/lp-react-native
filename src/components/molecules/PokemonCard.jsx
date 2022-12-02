@@ -31,6 +31,11 @@ const PokemonCard = ({ data }) => {
       style={{
         display: 'flex',
         padding: 15,
+        shadowOffset: { width: 5, height: 5 },
+        shadowColor: 'black',
+        shadowOpacity: 1,
+        elevation: 5,
+        // background color must be set
         flexDirection: 'row',
         width:
           dimensions.width < 768

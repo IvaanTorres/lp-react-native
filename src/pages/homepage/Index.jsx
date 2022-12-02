@@ -35,7 +35,8 @@ const Homepage = () => {
   }
 
   return (
-    <View>
+    <View style={{ backgroundColor: '#fff' }}>
+      <View style={{ height: 50 }}></View>
       {pokemonList ? (
         <>
           {/* <SeeMore onClick={getMorePokemon} /> */}

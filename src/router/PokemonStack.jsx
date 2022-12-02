@@ -12,6 +12,7 @@ const PokemonStack = () => {
         component={PokemonList}
         options={{
           title: 'Pokedex',
+          headerShown: false,
         }}
       />
       <Stack.Screen
