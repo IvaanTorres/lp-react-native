@@ -6,12 +6,13 @@ import {
   StyleSheet,
   Text,
   StatusBar,
+  Dimensions,
 } from 'react-native'
 import PokemonCard from '../molecules/PokemonCard'
 
 const Listing = ({ data }) => {
   const [lastElement, setLastElement] = useState(null)
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [windowWidth, setWindowWidth] = useState(Dimensions.get('screen').width)
 
   return (
     <View style={styles.container}>
@@ -20,7 +21,7 @@ const Listing = ({ data }) => {
         contentContainerStyle={{
           margin: 15,
         }}
-        numColumns={2} // TODO: 3 in tablet, 2 in mobile */,
+        numColumns={windowWidth < 768 ? 2 : 3}
         columnWrapperStyle={{
           justifyContent: 'space-between',
         }}

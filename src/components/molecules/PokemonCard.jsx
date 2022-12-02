@@ -11,7 +11,7 @@ const PokemonCard = ({ data }) => {
   const formattedName = data.name.charAt(0).toUpperCase() + data.name.slice(1)
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
 
-  const dimensions = Dimensions.get('window')
+  const dimensions = Dimensions.get('screen')
 
   return (
     <TouchableOpacity
@@ -19,8 +19,9 @@ const PokemonCard = ({ data }) => {
         display: 'flex',
         flexDirection: 'row',
         width:
-          dimensions.width / 2 - 22 /* // TODO: 3 in tablet, 2 in mobile */,
-        /* width: dimensions.width / 2 - 22, */
+          dimensions.width < 768
+            ? dimensions.width / 2 - 22
+            : dimensions.width / 3 - 22,
         height: cardWidth,
         backgroundColor: 'red',
         borderRadius: 20,
