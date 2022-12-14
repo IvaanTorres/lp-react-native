@@ -42,7 +42,10 @@ const PokemonCard = ({ data }) => {
         setCardWidth(width)
       }}
       onPress={() => {
-        navigation.navigate(routes.POKEMON_DETAILS, { url: data.url })
+        navigation.navigate(routes.POKEMON_DETAILS, {
+          url: data.url,
+          id: pokemonId,
+        })
       }}
     >
       <View style={Styles().cardLayout}>
