@@ -38,7 +38,7 @@ const Homepage = () => {
 
   const filterPokemon = (name) => {
     if(name != ''){
-      setFilteredPokemon(pokemonList.filter((pokemon) => pokemon.name.includes(name)))
+      setFilteredPokemon(pokemonList.filter((pokemon) => pokemon.name.includes(name.toLowerCase())))
     } else {
       setFilteredPokemon(pokemonList)
     }
