@@ -26,9 +26,8 @@ const Listing = ({ data, getMorePokemon }) => {
         data={data}
         renderItem={({ item }) => <PokemonCard data={item} />}
         keyExtractor={(item) => item.name}
-        ListHeaderComponent={() => <Text style={Styles.header}>Pokedex</Text>}
         ListFooterComponent={() => <View style={Styles.footer} />}
-        onEndReached={getMorePokemon}
+        // onEndReached={getMorePokemon}
       />
     </View>
   )

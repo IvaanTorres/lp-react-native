@@ -81,6 +81,7 @@ const PokemonDetails = (props) => {
           <Text>Average stats: {averageStats}</Text>
         </>
       ) : null}
+      {/* https://cdn.dribbble.com/users/1171520/screenshots/6540871/pokedex2.png */}
     </>
   )
 }
