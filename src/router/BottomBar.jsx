@@ -39,6 +39,8 @@ const BottomBar = () => {
           ),
           tabBarActiveTintColor: 'black',
           tabBarShowLabel: false,
+          tabBarShowLabel: false,
+          headerShown: false,
         }}
       />
       <Tab.Screen
